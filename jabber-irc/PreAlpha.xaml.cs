@@ -19,14 +19,22 @@ namespace jabber_irc
     /// </summary>
     public partial class PreAlpha : Window
     {
+        private string server = "irc.freenode.net";
+        private int port = 6667;
+
         public PreAlpha()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SendMessage(object sender, RoutedEventArgs e)
         {
+        }
 
+        private void JoinChannel(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(channelText.Text);
+            Console.WriteLine(usernameText.Text);
         }
     }
 }

@@ -8,15 +8,15 @@
         Title="JabberIRC-PreAlpha" Height="404.673" Width="800.935">
     <Grid>
         <Label Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,4,0,0">Channel</Label>
-        <TextBox Margin="80,8,0,0" Width="100" Name="Hello" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Margin="80,8,0,0" Width="100" x:Name="channelText" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Margin="0,19,0,0" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">Username</Label>
-        <TextBox Margin="80,23,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="usernameText" Margin="80,23,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Margin="0,37,0,0" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">Password</Label>
-        <TextBox Margin="80,41,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button Width="80" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,71,0,0">Join</Button>
+        <TextBox x:Name="passwordText" Margin="80,41,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Width="80" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,71,0,0" Click="JoinChannel">Join</Button>
         <TextBlock Background="AliceBlue" HorizontalAlignment="Left" Margin="8,106,0,0" TextWrapping="Wrap" Text="Debug Output..." VerticalAlignment="Top" Height="233" Width="247"/>
         <TextBlock Background="Azure" HorizontalAlignment="Left" Margin="273,10,0,0" TextWrapping="Wrap" Text="Msg block..." VerticalAlignment="Top" Height="325" Width="488"/>
         <TextBox Height="20" VerticalAlignment="Top" Margin="275,339,120,0"></TextBox>
-        <Button Content="Send" Width="75" Height="20" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="686,339,0,0"/>
+        <Button Content="Send" Width="75" Height="20" Click="SendMessage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="686,339,0,0"/>
     </Grid>
 </Window>
