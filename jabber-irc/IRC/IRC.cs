@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace jabber_irc.IRC
+namespace Jabber.IRC
 {
     class IRC
     {
