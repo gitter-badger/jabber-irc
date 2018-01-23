@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,10 +23,18 @@ namespace jabber_irc
     {
         private string server = "irc.freenode.net";
         private int port = 6667;
+        private Socket senderSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private Socket receiverSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         public PreAlpha()
         {
             InitializeComponent();
+            InitSockets();
+        }
+
+        private void InitSockets()
+        {
+
         }
 
         private void SendMessage(object sender, RoutedEventArgs e)
@@ -33,8 +43,13 @@ namespace jabber_irc
 
         private void JoinChannel(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(channelText.Text);
-            Console.WriteLine(usernameText.Text);
+            // Connect to server
+            IPAddress[] remoteIPs = Dns.GetHostAddresses(server);
+            senderSock.Connect(remoteIPs, port);
+            StringBuilder output = new StringBuilder();
+            output.AppendLine(string.Format("Socket connected to {0}", senderSock.RemoteEndPoint.ToString()));
+            debugText.Text = output.ToString();
+            // Join to Channel
         }
     }
 }
