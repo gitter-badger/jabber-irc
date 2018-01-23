@@ -9,8 +9,8 @@
     <Grid>
         <Label Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,4,0,0">Channel</Label>
         <TextBox Margin="80,8,0,0" Width="100" x:Name="channelText" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Margin="0,19,0,0" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">Username</Label>
-        <TextBox x:Name="usernameText" Margin="80,23,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="0,19,0,0" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">Nickname</Label>
+        <TextBox x:Name="nicknameText" Margin="80,23,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Margin="0,37,0,0" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">Password</Label>
         <TextBox x:Name="passwordText" Margin="80,41,0,0" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button Width="80" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,71,0,0" Click="JoinChannel">Join</Button>
