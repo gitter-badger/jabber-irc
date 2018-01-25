@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace Jabber.IRC
 {
-    class IRC
+    class IRC: IDisposable
     {
         /// <summary>
         /// Join a channel with its corresponding channel name
         /// </summary>
+
+        #region Class definition
+        #endregion
+
         public void Join()
         {
 
@@ -31,7 +35,6 @@ namespace Jabber.IRC
         {
 
         }
-        
         
         public void Nick()
         {
@@ -117,6 +120,10 @@ namespace Jabber.IRC
         public void Help()
         {
 
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
