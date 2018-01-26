@@ -16,22 +16,14 @@ namespace JabberIRC.IRC
         }
 
         /// <summary>
-        /// Connect to an IRC server
-        /// </summary>
-        /// <param name="server">Server address</param>
-        /// <param name="port">Port number</param>
-        public void Connect(string server, int port, StreamReader reader, StreamWriter writer)
-        {
-
-        }
-
-        /// <summary>
         /// Join a channel with its corresponding channel name
         /// </summary>
         public void Join(string channel, string nick, string realName, StreamReader reader, StreamWriter writer)
         {
             writer.WriteLine("NICK {0}", nick);
+            writer.Flush();
             writer.WriteLine("USER {0} +mode * : {1}", nick, realName);
+            writer.Flush();
         }
 
         /// <summary>

@@ -3,9 +3,10 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Windows;
+using JabberIRC.IRC;
 
 
-namespace jabber_irc
+namespace JabberIRC
 {
     /// <summary>
     /// Interaction logic for PreAlpha.xaml
@@ -33,6 +34,11 @@ namespace jabber_irc
 
         private void JoinChannel(object sender, RoutedEventArgs e)
         {
+            
+            IrcClient ircClient = new IrcClient();
+            ircClient.ConnectToServer();
+            ircClient.JoinChannel("#JabberIRC", "JabberTest", "Jabber IRC", appendDebugMsg);
+            /*
             var thread = new Thread(() =>
             {
                 var client = new TcpClient(server, port);
@@ -68,6 +74,7 @@ namespace jabber_irc
             });
 
             thread.Start();
+            */
         }
     }
 }
