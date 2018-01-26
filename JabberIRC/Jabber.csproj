@@ -63,9 +63,17 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IRC\ApiWrapper.cs" />
+    <Compile Include="IRC\Extensions\InviteExtension.cs" />
     <Compile Include="IRC\Extensions\JoinExtension.cs" />
+    <Compile Include="IRC\Extensions\KickExtension.cs" />
+    <Compile Include="IRC\Extensions\ListExtension.cs" />
     <Compile Include="IRC\Extensions\ModeExtension.cs" />
+    <Compile Include="IRC\Extensions\MotdExtension.cs" />
+    <Compile Include="IRC\Extensions\NamesExtension.cs" />
+    <Compile Include="IRC\Extensions\NoticeExtension.cs" />
     <Compile Include="IRC\Extensions\PartExtension.cs" />
+    <Compile Include="IRC\Extensions\PrivateMessageExtension.cs" />
+    <Compile Include="IRC\Extensions\TopicExtension.cs" />
     <Compile Include="IRC\IrcClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
