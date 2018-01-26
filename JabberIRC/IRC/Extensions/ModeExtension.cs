@@ -39,7 +39,7 @@ namespace JabberIRC.IRC.Extensions
     {
         public static void Mode(this ApiWrapper apiWrapper, string channel, ChannelMode mode, StreamWriter writer, ChannelAction? action = null)
         {
-            string command = $"MODE {action.ToString()??""}{channel} {mode}";
+            string command = $"MODE {channel} {action.ToString()??""}{mode}";
             writer.WriteLine(command);
         }
 
@@ -47,7 +47,7 @@ namespace JabberIRC.IRC.Extensions
         {
             string param = modeParams != null ? $" {modeParams}" : "";
             string modeNames = string.Join("", modes.Select(mode => mode.ToString() ?? ""));
-            string command = $"MODE {action.ToString()??""}{channel} {modeNames}{param}";
+            string command = $"MODE {channel} {action.ToString()??""}{modeNames}{param}";
             writer.WriteLine(command);
         }
     }
