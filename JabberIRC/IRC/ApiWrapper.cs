@@ -8,123 +8,63 @@ using System.Threading.Tasks;
 
 namespace JabberIRC.IRC
 {
-    class ApiWrapper
+    public class ApiWrapper
     {
         public ApiWrapper()
         {
-            
-        }
-
-        /// <summary>
-        /// Join a channel with its corresponding channel name
-        /// </summary>
-        public void Join(string channel, string nick, string realName, StreamReader reader, StreamWriter writer)
-        {
-            writer.WriteLine("NICK {0}", nick);
-            writer.WriteLine("USER {0} +mode * : {0}, {1}", nick, realName);
-            writer.WriteLine("JOIN {0}", channel);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Me()
-        {
 
         }
 
         /// <summary>
-        /// Start a private chat
+        /// Leave a given channel
         /// </summary>
-        public void Msg()
+        public void Part(string channel, StreamWriter writer)
         {
-
-        }
-
-        public void Nick()
-        {
-
-        }
-
-
-        /// <summary>
-        /// Send a short message to another person without opening up a private window
-        /// </summary>
-        public void Notice()
-        {
-
+            writer.WriteLine("PART {0}", channel);
         }
 
         /// <summary>
-        /// To leave a channel
+        /// Leave multiple channels
         /// </summary>
-        public void Part()
+        /// <param name="channels"></param>
+        /// <param name="writer"></param>
+        public void Part(List<string> channels, StreamWriter writer)
         {
-
+            writer.WriteLine("PART {0}", string.Join(",", channels.ToArray()));
         }
 
         /// <summary>
-        /// To leave all channels
+        /// Leave all joined channels
         /// </summary>
-        public void PartAll()
+        public void PartAll(StreamWriter writer)
         {
-
+            writer.WriteLine("PART 0");
         }
 
         /// <summary>
-        /// 
+        /// Set channel mode
         /// </summary>
-        public void Ping()
+        /// <param name="channel"></param>
+        /// <param name="mode"></param>
+        /// <param name="modeParams"></param>
+        public void ChannelMode(string channel, string mode, string modeParams, StreamWriter writer)
         {
-
+            writer.WriteLine("MODE {0} {1} {2}", channel, mode, modeParams);
         }
 
-        /// <summary>
-        /// Similar to Msg, except it foreces a window to pop open
-        /// </summary>
-        public void Query()
+        public void SetTopicMessage(string channel, string topic, StreamWriter writer)
         {
-
+            writer.WriteLine("TOPIC {0} :{1}", channel, topic);
         }
 
-        /// <summary>
-        /// Leave IRC altogether
-        /// </summary>
-        public void Quit()
+        public void ClearTopicMessage(string channel, StreamWriter writer)
         {
-
+            writer.WriteLine("TOPIC {0} :", channel);
         }
 
-        /// <summary>
-        /// Ingnore messages sending from a user
-        /// </summary>
-        public void Ignore()
+        public void CheckTopicMessage(string channel, StreamWriter writer)
         {
-
-        }
-
-        /// <summary>
-        /// Check information about one user
-        /// </summary>
-        public void WhoIs()
-        {
-
-        }
-
-        /// <summary>
-        /// Opens up a DCC/CHAT window to another user
-        /// </summary>
-        public void Chat()
-        {
-
-        }
-
-        /// <summary>
-        /// Check help info
-        /// </summary>
-        public void Help()
-        {
-
+            writer.WriteLine("TOPIC {0}", channel);
         }
 
     }
