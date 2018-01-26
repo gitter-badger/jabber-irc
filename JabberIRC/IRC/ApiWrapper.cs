@@ -21,9 +21,8 @@ namespace JabberIRC.IRC
         public void Join(string channel, string nick, string realName, StreamReader reader, StreamWriter writer)
         {
             writer.WriteLine("NICK {0}", nick);
-            writer.Flush();
-            writer.WriteLine("USER {0} +mode * : {1}", nick, realName);
-            writer.Flush();
+            writer.WriteLine("USER {0} +mode * : {0}, {1}", nick, realName);
+            writer.WriteLine("JOIN {0}", channel);
         }
 
         /// <summary>

@@ -63,7 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IRC\Command.cs" />
-    <Compile Include="IRC\IRC.cs" />
+    <Compile Include="IRC\ApiWrapper.cs" />
     <Compile Include="IRC\IrcClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

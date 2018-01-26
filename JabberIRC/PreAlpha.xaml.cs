@@ -13,8 +13,6 @@ namespace JabberIRC
     /// </summary>
     public partial class PreAlpha : Window
     {
-        private string server = "chat.freenode.net";
-        private int port = 6667;
         private StringBuilder output = new StringBuilder();
 
         public PreAlpha()
@@ -38,43 +36,6 @@ namespace JabberIRC
             IrcClient ircClient = new IrcClient();
             ircClient.ConnectToServer();
             ircClient.JoinChannel("#JabberIRC", "JabberTest", "Jabber IRC", appendDebugMsg);
-            /*
-            var thread = new Thread(() =>
-            {
-                var client = new TcpClient(server, port);
-
-                using (NetworkStream stream = client.GetStream())
-                {
-                    using (StreamReader reader = new StreamReader(stream))
-                    {
-                        using (StreamWriter writer = new StreamWriter(stream) { NewLine = "\r\n", AutoFlush = true })
-                        {
-                            writer.WriteLine("NICK JabberTester");
-                            writer.Flush();
-                            writer.WriteLine("USER {0} +mode * : Jabber IRC", "JabberIRC");
-                            writer.Flush();
-                            writer.WriteLine("JOIN #JabberIRC");
-                            writer.Flush();
-
-                            string inputLine;
-                            while ((inputLine = reader.ReadLine()) != null)
-                            {
-                                appendDebugMsg(inputLine);
-                            }
-                            appendDebugMsg("Exited while loop");
-                        }
-                    }
-                }
-
-                this.Dispatcher.Invoke(() =>
-                {
-                    debugText.Text = output.ToString();
-                });
-
-            });
-
-            thread.Start();
-            */
         }
     }
 }
