@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{51A72FA2-B485-45C3-A406-5F2D9B314D9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>jabber_irc</RootNamespace>
-    <AssemblyName>jabber-irc</AssemblyName>
+    <RootNamespace>JabberIRC</RootNamespace>
+    <AssemblyName>JabberIRC</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -63,7 +63,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IRC\Command.cs" />
-    <Compile Include="IRC\IRC.cs" />
+    <Compile Include="IRC\Irc.cs" />
+    <Compile Include="IRC\IrcClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

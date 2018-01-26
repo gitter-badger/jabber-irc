@@ -1,23 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jabber.IRC
+namespace JabberIRC.IRC
 {
-    class IRC: IDisposable
+    class ApiWrapper
     {
+        public ApiWrapper()
+        {
+            
+        }
+
+        /// <summary>
+        /// Connect to an IRC server
+        /// </summary>
+        /// <param name="server">Server address</param>
+        /// <param name="port">Port number</param>
+        public void Connect(string server, int port, StreamReader reader, StreamWriter writer)
+        {
+
+        }
+
         /// <summary>
         /// Join a channel with its corresponding channel name
         /// </summary>
-
-        #region Class definition
-        #endregion
-
-        public void Join()
+        public void Join(string channel, string nick, string realName, StreamReader reader, StreamWriter writer)
         {
-
+            writer.WriteLine("NICK {0}", nick);
+            writer.WriteLine("USER {0} +mode * : {1}", nick, realName);
         }
 
         /// <summary>
@@ -35,13 +49,13 @@ namespace Jabber.IRC
         {
 
         }
-        
+
         public void Nick()
         {
 
         }
 
-        
+
         /// <summary>
         /// Send a short message to another person without opening up a private window
         /// </summary>
@@ -65,7 +79,7 @@ namespace Jabber.IRC
         {
 
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -105,7 +119,7 @@ namespace Jabber.IRC
         {
 
         }
-        
+
         /// <summary>
         /// Opens up a DCC/CHAT window to another user
         /// </summary>
@@ -122,8 +136,5 @@ namespace Jabber.IRC
 
         }
 
-        public void Dispose()
-        {
-        }
     }
 }
