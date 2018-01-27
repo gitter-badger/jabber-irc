@@ -63,7 +63,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IRC\ApiWrapper.cs" />
+    <Compile Include="IRC\Extensions\AdminExtension.cs" />
     <Compile Include="IRC\Extensions\ConnectExtension.cs" />
+    <Compile Include="IRC\Extensions\InfoExtension.cs" />
     <Compile Include="IRC\Extensions\InviteExtension.cs" />
     <Compile Include="IRC\Extensions\JoinExtension.cs" />
     <Compile Include="IRC\Extensions\KickExtension.cs" />
@@ -76,11 +78,16 @@
     <Compile Include="IRC\Extensions\NoticeExtension.cs" />
     <Compile Include="IRC\Extensions\PartExtension.cs" />
     <Compile Include="IRC\Extensions\PrivateMessageExtension.cs" />
+    <Compile Include="IRC\Extensions\ServListExtension.cs" />
+    <Compile Include="IRC\Extensions\SqueryExtension.cs" />
     <Compile Include="IRC\Extensions\StatsExtension.cs" />
     <Compile Include="IRC\Extensions\TimeExtension.cs" />
     <Compile Include="IRC\Extensions\TopicExtension.cs" />
     <Compile Include="IRC\Extensions\TraceExtension.cs" />
     <Compile Include="IRC\Extensions\VersionExtension.cs" />
+    <Compile Include="IRC\Extensions\WhoExtension.cs" />
+    <Compile Include="IRC\Extensions\WhoisExtension.cs" />
+    <Compile Include="IRC\Extensions\WhoWasExtension.cs" />
     <Compile Include="IRC\IrcClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
