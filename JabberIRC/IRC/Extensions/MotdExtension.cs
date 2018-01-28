@@ -11,7 +11,7 @@ namespace JabberIRC.IRC.Extensions
     public static class MotdExtension
     {
         // Get the message of the day of the given server. If there is no target given it will return the MOTD of the current server
-        public static void MessageOfTheDay(this ApiWrapper apiWrapper, string target=null, StreamWriter writer)
+        public static void MessageOfTheDay(this ApiWrapper apiWrapper, StreamWriter writer, string target=null)
         {
             writer.WriteLine($"MOTD{target ?? $" {target}"}");
         } 
