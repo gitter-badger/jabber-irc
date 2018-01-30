@@ -56,8 +56,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="IRC\Extensions\ConnectExtensionTests.cs" />
-    <Compile Include="IRC\Extensions\JoinExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +66,9 @@
       <Project>{51A72FA2-B485-45C3-A406-5F2D9B314D9E}</Project>
       <Name>Jabber</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IRC\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

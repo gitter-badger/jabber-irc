@@ -9,6 +9,7 @@
     /// s - marks a user for receipt of server notices
     public enum UserMode
     {
+        Default = 0, // No meaning
         Away = 'a',
         Invisible = 'i',
         Wallops = 'w',
@@ -36,7 +37,7 @@
     {
         public void User(string username, UserMode mode, string realname)
         {
-            _writer.WriteLine($"USER {username}");
+            _writer.WriteLine($"USER {username} {mode} * :{realname}");
         }
     }
 }

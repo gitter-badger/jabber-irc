@@ -1,7 +1,6 @@
 ﻿namespace JabberIRC.IRC
 {
     using System.Collections.Generic;
-    using System.IO;
 
     public partial class ApiWrapper
     {
@@ -29,21 +28,25 @@
         /// of. The server will process this message as if the user sent 
         /// a PART command for each channel he is a member of.
         /// </summary>
+        /*
         public void Join(string channel, string nick, string realName)
         {
             _writer.WriteLine($"NICK {nick}");
             _writer.WriteLine("USER {0} +mode * : {0}, {1}", nick, realName);
             _writer.WriteLine("JOIN {0}", channel);
         }
+        */
 
-        public void Join(string channel, string key)
+        public void Join(string channel, string key = null)
         {
-            _writer.WriteLine("JOIN {0} {1}", channel, key);
+            string space = key == null ? "" : " ";
+            _writer.WriteLine($"JOIN {channel}{space}{key}");
         }
 
-        public void Join(List<string> channels)
+        public void Join(List<string> channels, List<string> keys)
         {
-            _writer.WriteLine("JOIN {0}", string.Join(",", channels.ToArray()));
+            string space = keys.Count == 0 ? "" : " ";
+            _writer.WriteLine("JOIN {0}{1}{2}", string.Join(",", channels.ToArray()), space, string.Join(",", keys));
         }
 
         public void LeaveAllChannels()
