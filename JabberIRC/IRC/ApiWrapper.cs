@@ -8,11 +8,22 @@ using System.Threading.Tasks;
 
 namespace JabberIRC.IRC
 {
-    public class ApiWrapper
+    public partial class ApiWrapper
     {
+        private StreamWriter _writer;
+        private StreamReader _reader;
+
+
+
         public ApiWrapper()
         {
 
+        }
+
+        public ApiWrapper(StreamWriter writer, StreamReader reader)
+        {
+            _writer = writer;
+            _reader = reader;
         }
 
         /// <summary>

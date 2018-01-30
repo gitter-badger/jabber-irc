@@ -1,0 +1,27 @@
+﻿using System.IO;
+
+namespace JabberIRC.IRC
+{
+    /// <summary>
+    /// Parameters: [ [ remotew server ] server mask ]
+    /// 
+    /// With LINKS, a user can list all servernames, which are known by the server anwsering the query.
+    /// The returned list of servers MUST match the mask, or if no mask is given, the full list is returned.
+    /// 
+    /// If "remote server" is given in addition to "server mask", the LINKS command is forwarded to the 
+    /// first server found that matches that name (if any), and that server is then returned to anwser the
+    /// query
+    /// </summary>
+    public partial class ApiWrapper
+    {
+        public void Link(string remoteServer)
+        {
+            _writer.WriteLine($"LINKS {remoteServer}");
+        }
+
+        public void Link(string remoteSerer, string serverMask)
+        {
+            _writer.WriteLine($"LINKS {remoteSerer} {serverMask}");
+        }
+    }
+}

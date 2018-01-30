@@ -25,7 +25,7 @@ namespace JabberIRC.IRC
             _stream = _tcpClient.GetStream();
             _reader = new StreamReader(_stream);
             _writer = new StreamWriter(_stream) { NewLine = "\r\n", AutoFlush = true };
-            _api = new ApiWrapper();
+            _api = new ApiWrapper(_writer, _reader);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace JabberIRC.IRC
         {
             _thread = new Thread(() =>
             {
-                _api.Join(channel, nick, realName, _reader, _writer);
+                _api.Join(channel, nick, realName);
                 string response;
                 while ((response = _reader.ReadLine()) != null)
                 {
