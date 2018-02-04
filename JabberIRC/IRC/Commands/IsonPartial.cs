@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JabberIRC.IRC
+namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: nickname *( SPACE nickname )

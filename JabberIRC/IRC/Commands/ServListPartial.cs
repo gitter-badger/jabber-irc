@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ mask [ type ] ]
@@ -9,10 +9,19 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string ServList(string mask=null, string type=null)
+        public static string ServList()
         {
-            string space = mask == null ? "" : " ";
-            return $"SERVLIST{space}{mask}{space}{type}";
+            return "SERVLIST";
+        }
+
+        public static string ServList(string mask)
+        {
+            return $"SERVLIST {mask}";
+        }
+
+        public static string ServList(string mask, string type)
+        {
+            return $"SERVLIST {mask} {type}";
         }
     }
 }

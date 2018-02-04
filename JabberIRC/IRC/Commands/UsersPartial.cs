@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ target ]
@@ -15,10 +15,10 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Users(string target=null)
+        public static string Users(string targetServer=null)
         {
-            string space = target == null ? "" : " ";
-            return $"USERS{space}{target}";
+            string space = targetServer == null ? "" : " ";
+            return $"USERS{space}{targetServer}";
         }
     }
 }

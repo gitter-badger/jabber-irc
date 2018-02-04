@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ "mask" [ "o" ] ]
@@ -19,11 +19,20 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Who(string mask=null, string oParam=null)
+        public static string Who()
         {
-            string oParamSpace = oParam == null ? "" : " ";
-            string maskSpace = mask == null ? "" : " ";
-            return $"WHO{maskSpace}{mask}{oParamSpace}{oParam}";
+            return "WHO";
+        }
+
+        public static string Who(string mask)
+        {
+            return $"WHO {mask}";
+        }
+
+        public static string Who(string mask, bool operators)
+        {
+            if (!operators) return Who(mask);
+            return $"WHO {mask} o";
         }
     }
 }

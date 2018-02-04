@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ [ remotew server ] server mask ]
@@ -12,12 +12,17 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Link(string remoteServer)
+        public static string Links()
+        {
+            return "LINKS";
+        }
+
+        public static string Links(string remoteServer)
         {
             return $"LINKS {remoteServer}";
         }
 
-        public static string Link(string remoteSerer, string serverMask)
+        public static string Links(string remoteSerer, string serverMask)
         {
             return $"LINKS {remoteSerer} {serverMask}";
         }

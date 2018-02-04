@@ -75,7 +75,7 @@
     <Compile Include="IRC\Commands\JoinPartial.cs" />
     <Compile Include="IRC\Commands\KickPartial.cs" />
     <Compile Include="IRC\Commands\KillPartial.cs" />
-    <Compile Include="IRC\Commands\LinkPartial.cs" />
+    <Compile Include="IRC\Commands\LinksPartial.cs" />
     <Compile Include="IRC\Commands\ListPartial.cs" />
     <Compile Include="IRC\Commands\LusersPartial.cs" />
     <Compile Include="IRC\Commands\ChannelModePartial.cs" />
@@ -105,11 +105,11 @@
     <Compile Include="IRC\Commands\TracePartial.cs" />
     <Compile Include="IRC\Commands\UserModePartial.cs" />
     <Compile Include="IRC\Commands\UserPartial.cs" />
-    <Compile Include="IRC\Commands\UserhostExtension..cs" />
+    <Compile Include="IRC\Commands\UserHostExtension..cs" />
     <Compile Include="IRC\Commands\UsersPartial.cs" />
     <Compile Include="IRC\Commands\VersionPartial.cs" />
     <Compile Include="IRC\Commands\WhoPartial.cs" />
-    <Compile Include="IRC\Commands\WhoisPartial.cs" />
+    <Compile Include="IRC\Commands\WhoIsPartial.cs" />
     <Compile Include="IRC\Commands\WhoWasPartial.cs" />
     <Compile Include="IRC\IrcClient.cs" />
     <Compile Include="MainWindow.xaml.cs">

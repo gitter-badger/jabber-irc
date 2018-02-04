@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: user [ target [ channel ] ]
@@ -17,11 +17,19 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Summon(string user, string target=null, string channel=null)
+        public static string Summon(string user)
         {
-            string targetSpace = target == null ? "" : " ";
-            string channelSpace = channel == null ? "" : " ";
-            return $"SUMMON {user}{targetSpace}{target}{channelSpace}{channel}";
+            return $"SUMMON {user}";
+        }
+
+        public static string Summon(string user, string targetServer)
+        {
+            return $"SUMMON {user} {targetServer}";
+        }
+
+        public static string Summon(string user, string targetServer, string channel)
+        {
+            return $"SUMMON {user} {targetServer} {channel}";
         }
     }
 }

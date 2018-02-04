@@ -20,10 +20,10 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Whois(string mask, string target=null)
+        public static string WhoIs(string userMask, string targetServer=null)
         {
-            string targetSpace = target == null ? "" : " ";
-            return $"WHOIS{targetSpace}{target} {mask}";
+            string targetSpace = targetServer == null ? "" : " ";
+            return $"WHOIS{targetSpace}{targetServer} {userMask}";
         }
     }
 }

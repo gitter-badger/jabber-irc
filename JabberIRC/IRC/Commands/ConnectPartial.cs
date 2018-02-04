@@ -14,7 +14,7 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Connect(string server, int? port, string remoteServer=null)
+        public static string Connect(string server, int port, string remoteServer=null)
         {
             string space = remoteServer == null ? "" : " ";
             return $"CONNECT {server} {port}{space}{remoteServer}";

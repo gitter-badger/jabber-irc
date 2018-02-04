@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JabberIRC.IRC
+namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: nickname *( SPACE nickname )
@@ -12,14 +12,14 @@ namespace JabberIRC.IRC
     /// </summary>
     public partial class IrcCommand
     {
-        public static string Userhost(string nickname)
+        public static string UserHost(string nickname)
         {
             return $"USERHOST {nickname}";
         }
 
-        public static string Userhost(List<string> nicknames)
+        public static string UserHost(List<string> nicknames)
         {
-            return $"USEHOST {string.Join(" ", nicknames)}";
+            return $"USERHOST {string.Join(" ", nicknames)}";
         }
     }
 }

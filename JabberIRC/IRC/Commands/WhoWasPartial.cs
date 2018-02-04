@@ -1,4 +1,6 @@
-﻿namespace JabberIRC.IRC
+﻿using System.Collections.Generic;
+
+namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: nickname *( "," nickname ) [ count [ target ] ]
@@ -17,11 +19,34 @@
     /// </summary>
     public partial class IrcCommand
     {
-        public static string WhoWas(string nickname, int? count=null, string target=null)
+        public static string WhoWas(string nickname)
         {
-            string countSpace = count == null ? "" : " ";
-            string targetSpace = target == null ? "" : " ";
-            return $"WHOWAS {nickname}{countSpace}{count}{targetSpace}{target}";
+            return $"WHOWAS {nickname}";
+        }
+
+        public static string WhoWas(List<string> nicknames)
+        {
+            return $"WHOWAS {string.Join(",", nicknames)}";
+        }
+
+        public static string WhoWas(string nickname, int count)
+        {
+            return $"WHOWAS {nickname} {count}";
+        }
+
+        public static string WhoWas(List<string> nicknames, int count)
+        {
+            return $"WHOWAS {string.Join(",", nicknames)} {count}";
+        }
+
+        public static string WhoWas(string nickname, int count, string target)
+        {
+            return $"WHOWAS {nickname} {count} {target}";
+        }
+
+        public static string WhoWas(List<string> nicknames, int count, string target)
+        {
+            return $"WHOWAS {string.Join(",", nicknames)} {count} {target}";
         }
     }
 }
