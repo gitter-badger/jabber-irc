@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace jabber_irc
+namespace JabberIRC 
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class JabberWindow : Window
     {
-        public MainWindow()
+        public JabberWindow()
         {
             InitializeComponent();
         }
