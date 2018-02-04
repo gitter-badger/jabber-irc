@@ -63,9 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IRC\Commands\AdminPartial.cs" />
-    <Compile Include="IRC\Commands\ApiWrapper.cs" />
     <Compile Include="IRC\Commands\AwayPartial.cs" />
-    <Compile Include="IRC\Commands\IrcCommand.cs" />
     <Compile Include="IRC\Commands\ConnectPartial.cs" />
     <Compile Include="IRC\Commands\DiePartial.cs" />
     <Compile Include="IRC\Commands\ErrorPartial.cs" />
