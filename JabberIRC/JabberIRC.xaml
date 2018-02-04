@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:JabberIRC"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -14,9 +15,15 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="JabberIRC" Height="350" Width="525">
-    <Grid>
-        <materialDesign:Card Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
-    </Grid>
+    <dragablz:TabablzControl Margin="8">
+        <dragablz:TabablzControl.InterTabController>
+            <dragablz:InterTabController />
+        </dragablz:TabablzControl.InterTabController>
+        <TabItem Header="Tab No. 1" IsSelected="True">
+            <TextBlock>Hello World</TextBlock>
+        </TabItem>
+        <TabItem Header="Tab No. 2">
+            <TextBlock>We Have Tearable Tabs!</TextBlock>
+        </TabItem>
+    </dragablz:TabablzControl>
 </Window>
