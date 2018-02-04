@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: None
@@ -7,9 +7,9 @@
     /// an operator to force the server to re-read and process its
     /// configuration file.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Rehash()
+        public static string Rehash()
         {
             return "REHASH";
         }

@@ -10,14 +10,14 @@ namespace JabberIRC.IRC
     /// about each nickname that it found. The returned list has each reply
     /// separated by a space.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Userhost(string nickname)
+        public static string Userhost(string nickname)
         {
             return $"USERHOST {nickname}";
         }
 
-        public string Userhost(List<string> nicknames)
+        public static string Userhost(List<string> nicknames)
         {
             return $"USEHOST {string.Join(" ", nicknames)}";
         }

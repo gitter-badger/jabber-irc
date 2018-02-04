@@ -56,6 +56,24 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="IRC\Commands\AdminTests.cs" />
+    <Compile Include="IRC\Commands\AwayTests.cs" />
+    <Compile Include="IRC\Commands\ChannelModeTests.cs" />
+    <Compile Include="IRC\Commands\ConnectTests.cs" />
+    <Compile Include="IRC\Commands\DieTests.cs" />
+    <Compile Include="IRC\Commands\ErrorTests.cs" />
+    <Compile Include="IRC\Commands\InfoTests.cs" />
+    <Compile Include="IRC\Commands\JoinTests.cs" />
+    <Compile Include="IRC\Commands\NickTests.cs" />
+    <Compile Include="IRC\Commands\OperTests.cs" />
+    <Compile Include="IRC\Commands\PartTests.cs" />
+    <Compile Include="IRC\Commands\PassTests.cs" />
+    <Compile Include="IRC\Commands\QuitTests.cs" />
+    <Compile Include="IRC\Commands\ServiceTests.cs" />
+    <Compile Include="IRC\Commands\SquitTests.cs" />
+    <Compile Include="IRC\Commands\TopicTests.cs" />
+    <Compile Include="IRC\Commands\UserModeTests.cs" />
+    <Compile Include="IRC\Commands\UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,9 +85,7 @@
       <Name>Jabber</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IRC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -14,9 +14,9 @@
     ///     l - returns a list of the server's connections, showing how long each connection has been
     ///         established and the traffic over that connection in Kbytes and messages for each direction
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Stats(string query=null, string target=null)
+        public static string Stats(string query=null, string target=null)
         {
             string space = query == null ? "" : " ";
             return $"STATS{space}{query}{space}{target}";

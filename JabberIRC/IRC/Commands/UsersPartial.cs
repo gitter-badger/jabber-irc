@@ -13,9 +13,9 @@
     /// simply toggling an option and restarting the server. The procedure 
     /// to enable this command SHOULD also include suitable large comments.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Users(string target=null)
+        public static string Users(string target=null)
         {
             string space = target == null ? "" : " ";
             return $"USERS{space}{target}";

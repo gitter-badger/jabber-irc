@@ -1,8 +1,8 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     using System.Collections.Generic;
 
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
         /// <summary>
         /// parameters: ( channel *( "," channel ) [ key *( "," key ) ] )/ "0"
@@ -37,19 +37,29 @@
         }
         */
 
-        public string Join(string channel, string key = null)
+        public static string Join(string channel, string key = null)
         {
             string space = key == null ? "" : " ";
             return $"JOIN {channel}{space}{key}";
         }
 
-        public string Join(List<string> channels, List<string> keys)
+        public static string Join(List<string> channels)
         {
-            string space = keys.Count == 0 ? "" : " ";
-            return string.Format("JOIN {0}{1}{2}", string.Join(",", channels.ToArray()), space, string.Join(",", keys));
+            return $"JOIN {string.Join(",", channels.ToArray())}";
         }
 
-        public string LeaveAllChannels()
+        public static string Join(List<string> channels, string key)
+        {
+            return $"JOIN {string.Join(",", channels.ToArray())} {key}";
+        }
+
+        public static string Join(List<string> channels, List<string> keys)
+        {
+            string space = keys == null ? "" : " ";
+            return $"JOIN {string.Join(",", channels.ToArray())}{space}{string.Join(",", keys)}";
+        }
+
+        public static string LeaveAllChannels()
         {
             return "JOIN 0";
         }

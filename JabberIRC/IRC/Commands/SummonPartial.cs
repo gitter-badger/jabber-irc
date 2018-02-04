@@ -15,9 +15,9 @@
     /// if summon is not enabled in a server, it MUST return the 
     /// ERR_SUMMONDISABLED numeric.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Summon(string user, string target=null, string channel=null)
+        public static string Summon(string user, string target=null, string channel=null)
         {
             string targetSpace = target == null ? "" : " ";
             string channelSpace = channel == null ? "" : " ";

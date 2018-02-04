@@ -1,18 +1,28 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
-    public partial class ApiWrapper
+    /// <summary>
+    /// Parameters: channel [ topic ]
+    /// 
+    /// The TOPIC command is used to change or view the topic of a channel.
+    /// The topic for channel "channel" is returned if there is no "topic"
+    /// given. If the "topic" parameter is present, the topic for that 
+    /// channel will be changed, if this action is allowed for the user
+    /// requesting it. If the "topic" parameter is an empty string, the
+    /// topic for that channel will be removed.
+    /// </summary>
+    public partial class IrcCommand
     {
-        public string Topic(string channel, string topic=null)
+        public static string Topic(string channel, string topic=null)
         {
-            return $"TOPIC {channel} {topic}";
+            return $"TOPIC {channel} :{topic}";
         }
 
-        public string ClearTopic(string channel)
+        public static string ClearTopic(string channel)
         {
             return $"TOPIC {channel} :";
         }
 
-        public string GetTopic(string channel)
+        public static string GetTopic(string channel)
         {
             return $"TOPIC {channel}";
         }

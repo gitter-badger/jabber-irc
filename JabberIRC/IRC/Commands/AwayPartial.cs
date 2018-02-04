@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ text ]
@@ -20,9 +18,9 @@ namespace JabberIRC.IRC
     /// other servers. To update the away status of a client across servers,
     /// the user mode 'a' SHOULD be used instead.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Away(string text=null)
+        public static string Away(string text=null)
         {
             string separator = text == null ? "" : " :";
             return $"AWAY{separator}{text}";

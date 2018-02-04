@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: password
@@ -8,9 +8,9 @@
     /// the conenction is made. Currently this requires that user send a
     /// PASS command before sending the NICK/USER combination.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Pass(string password)
+        public static string Pass(string password)
         {
             return $"PASS {password}";
         }

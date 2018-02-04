@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ target ] mask *( "," mask )
@@ -18,9 +18,9 @@
     /// 
     /// Wildcards are allowed in the target server
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Whois(string mask, string target=null)
+        public static string Whois(string mask, string target=null)
         {
             string targetSpace = target == null ? "" : " ";
             return $"WHOIS{targetSpace}{target} {mask}";

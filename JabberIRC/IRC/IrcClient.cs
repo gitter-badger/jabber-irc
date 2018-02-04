@@ -13,6 +13,8 @@ namespace JabberIRC.IRC
         private readonly StreamReader _reader;
         private readonly ApiWrapper _api;
         private Thread _thread;
+        IrcCommand command; 
+        
 
         public IrcClient(string host = "chat.freenode.net", int port = 6667)
         {
@@ -20,7 +22,6 @@ namespace JabberIRC.IRC
             _stream = _tcpClient.GetStream();
             _writer = new StreamWriter(_stream) { NewLine = "\r\n", AutoFlush = true };
             _reader = new StreamReader(_stream);
-            _api = new ApiWrapper(_writer, _reader);
         }
 
         ~IrcClient()
@@ -40,6 +41,7 @@ namespace JabberIRC.IRC
         {
             _thread = new Thread(() =>
             {
+                /*
                 _api.Nick(nick);
                 _api.User(nick, UserMode.Default, realName);
                 _api.Join(channel);
@@ -48,6 +50,7 @@ namespace JabberIRC.IRC
                 {
                     callback(response);
                 }
+                */
             });
             _thread.Start();
 

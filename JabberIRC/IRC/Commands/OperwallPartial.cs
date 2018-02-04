@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     ///  Parameters: "Text to be sent"
@@ -13,9 +13,9 @@
     /// WALLOPS.
     /// 
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Operwall(string message)
+        public static string Operwall(string message)
         {
             return $"WALLOPS :{message}";
         }

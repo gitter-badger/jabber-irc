@@ -16,9 +16,9 @@
     /// represnets the target of the ping, and the message gets forwarded
     /// there.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Ping(string server1, string server2=null)
+        public static string Ping(string server1, string server2=null)
         {
             string space = server2 == null ? "": " ";
             return $"PING {server1}{space}{server2}";

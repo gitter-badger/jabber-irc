@@ -2,17 +2,17 @@
 
 namespace JabberIRC.IRC
 {
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
         /// <summary>
         /// List all channels
         /// </summary>
-        public string List()
+        public static string List()
         {
             return "LIST";
         }
 
-        public string List(List<string> channels)
+        public static string List(List<string> channels)
         {
             return $"LIST {string.Join(",", channels)}";
         }

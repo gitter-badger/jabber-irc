@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: nickname reserved distribution type reserved info
@@ -16,11 +16,11 @@
     /// 
     /// The type parameter is currently reserved for future usage.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Service()
+        public static string Service(string serviceName, string distribution,  string info, int? type=0, string reservedParam1="*", int? reservedParam2=0)
         {
-            return "";
+            return $"SERVICE {serviceName} {reservedParam1} {distribution} {type} {reservedParam2} :{info}";
         }
     }
 }

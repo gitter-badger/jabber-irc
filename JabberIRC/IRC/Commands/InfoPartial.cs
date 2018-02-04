@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters [ target ]
@@ -11,9 +9,9 @@ namespace JabberIRC.IRC
     /// 
     /// Wildcards are allowed in the "target" parameter
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Info(string target=null)
+        public static string Info(string target=null)
         {
             string space = target == null ? "" : " ";
             return $"INFO{space}{target}";

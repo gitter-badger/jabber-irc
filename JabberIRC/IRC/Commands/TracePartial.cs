@@ -24,9 +24,9 @@
     /// 
     /// Wildcards are allowed in the "target" parameter.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Trace(string target=null)
+        public static string Trace(string target=null)
         {
             string space = target == null ? "" : " ";
             return $"TRACE{space}{target}";

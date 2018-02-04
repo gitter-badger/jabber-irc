@@ -1,10 +1,10 @@
 ﻿namespace JabberIRC.IRC
 {
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Kick(string channel, string user, string reason=null)
+        public static string Kick(string channel, string user, string reason=null)
         {
-            return string.Format("KICK {0} {1}{2}", channel, user, reason == null ? "" : $" :{reason}");
+            return $"KICK {channel} {user}{(reason == null ? "" : $" :{reason}")}";
         }
     }
 }

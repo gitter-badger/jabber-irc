@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: None
@@ -14,9 +12,9 @@ namespace JabberIRC.IRC
     /// the sending client is connected and MUST NOT be passed onto other
     /// connected servers.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Die()
+        public static string Die()
         {
             return "DIE";
         }

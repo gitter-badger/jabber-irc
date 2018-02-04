@@ -10,14 +10,14 @@
     /// first server found that matches that name (if any), and that server is then returned to anwser the
     /// query
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Link(string remoteServer)
+        public static string Link(string remoteServer)
         {
             return $"LINKS {remoteServer}";
         }
 
-        public string Link(string remoteSerer, string serverMask)
+        public static string Link(string remoteSerer, string serverMask)
         {
             return $"LINKS {remoteSerer} {serverMask}";
         }

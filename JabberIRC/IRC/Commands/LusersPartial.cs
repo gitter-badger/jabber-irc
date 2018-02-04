@@ -8,14 +8,14 @@
     /// is specified, the request is forwarded to that server which will generate
     /// the reply.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Lusers(string mask, string target)
+        public static string Lusers(string mask, string target)
         {
             return $"LUSERS {mask} {target}";
         }
 
-        public string Lusers()
+        public static string Lusers()
         {
             return "LUSERS";
         }

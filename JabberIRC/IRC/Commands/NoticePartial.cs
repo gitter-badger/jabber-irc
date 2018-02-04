@@ -1,8 +1,8 @@
 ﻿namespace JabberIRC.IRC
 {
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Notice(string target, string message)
+        public static string Notice(string target, string message)
         {
             return $"NOTICE {target} :{message}";
         }

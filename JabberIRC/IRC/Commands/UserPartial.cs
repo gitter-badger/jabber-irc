@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// a - user is flagged as away;
     /// i - marks a users as invisible;
@@ -33,11 +33,11 @@
     /// 
     /// The realname may contain space characters.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string User(string username, UserMode mode, string realname)
+        public static string User(string username, string modeString, string realname)
         {
-            return $"USER {username} {mode} * :{realname}";
+            return $"USER {username} {modeString} * :{realname}";
         }
     }
 }

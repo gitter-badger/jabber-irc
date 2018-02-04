@@ -1,8 +1,8 @@
 ﻿namespace JabberIRC.IRC
 {
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Invite(string nickname, string channel)
+        public static string Invite(string nickname, string channel)
         {
             return $"INVITE {nickname} {channel}";
         }

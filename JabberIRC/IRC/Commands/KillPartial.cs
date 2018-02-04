@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC
 {
     /// <summary>
     /// Parameters: nickname comment
@@ -39,9 +37,9 @@ namespace JabberIRC.IRC
     /// which is updated by each server it passes through, each prepending
     /// its name to the path.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Kill(string nickname, string comment)
+        public static string Kill(string nickname, string comment)
         {
             return $"KILL {nickname} {comment}";
         }

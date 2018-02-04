@@ -12,9 +12,9 @@
     /// which the sending client is connected and MUST NOT be passed noto
     /// other connected servers.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Restart()
+        public static string Restart()
         {
             return "RESTART";
         }

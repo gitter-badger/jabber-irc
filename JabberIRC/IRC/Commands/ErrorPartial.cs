@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: "error message"
@@ -23,11 +21,11 @@ namespace JabberIRC.IRC
     /// message SHOULD be encapsulated inside a NOTICE message, indicating
     /// that the client was not responsible for the error.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Error(string message)
+        public static string Error(string message)
         {
-            return $"ERROR {message}";
+            return $"ERROR :{message}";
         }
     }
 }

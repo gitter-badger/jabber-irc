@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: "target server" "port" [ remote server ]
@@ -19,9 +12,9 @@ namespace JabberIRC.IRC
     /// The server receiving a remote CONNECT command SHOULD generate a WALLOPS message describing the
     /// source and target of the request.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Connect(string server, string port, string remoteServer=null)
+        public static string Connect(string server, int? port, string remoteServer=null)
         {
             string space = remoteServer == null ? "" : " ";
             return $"CONNECT {server} {port}{space}{remoteServer}";

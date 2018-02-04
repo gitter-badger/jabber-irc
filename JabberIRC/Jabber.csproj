@@ -62,9 +62,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IRC\ApiWrapper.cs" />
     <Compile Include="IRC\Commands\AdminPartial.cs" />
+    <Compile Include="IRC\Commands\ApiWrapper.cs" />
     <Compile Include="IRC\Commands\AwayPartial.cs" />
+    <Compile Include="IRC\Commands\IrcCommand.cs" />
     <Compile Include="IRC\Commands\ConnectPartial.cs" />
     <Compile Include="IRC\Commands\DiePartial.cs" />
     <Compile Include="IRC\Commands\ErrorPartial.cs" />
@@ -77,12 +78,13 @@
     <Compile Include="IRC\Commands\LinkPartial.cs" />
     <Compile Include="IRC\Commands\ListPartial.cs" />
     <Compile Include="IRC\Commands\LusersPartial.cs" />
-    <Compile Include="IRC\Commands\ModePartial.cs" />
+    <Compile Include="IRC\Commands\ChannelModePartial.cs" />
     <Compile Include="IRC\Commands\MotdPartial.cs" />
     <Compile Include="IRC\Commands\NamesPartial.cs" />
     <Compile Include="IRC\Commands\NickPartial.cs" />
     <Compile Include="IRC\Commands\NoticePartial.cs" />
     <Compile Include="IRC\Commands\NumericRepliesExtension.cs" />
+    <Compile Include="IRC\Commands\OperPartial.cs" />
     <Compile Include="IRC\Commands\OperwallPartial.cs" />
     <Compile Include="IRC\Commands\PartPartial.cs" />
     <Compile Include="IRC\Commands\PassPartial.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="IRC\Commands\TimePartial.cs" />
     <Compile Include="IRC\Commands\TopicPartial.cs" />
     <Compile Include="IRC\Commands\TracePartial.cs" />
+    <Compile Include="IRC\Commands\UserModePartial.cs" />
     <Compile Include="IRC\Commands\UserPartial.cs" />
     <Compile Include="IRC\Commands\UserhostExtension..cs" />
     <Compile Include="IRC\Commands\UsersPartial.cs" />

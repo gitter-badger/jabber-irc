@@ -8,9 +8,9 @@
     /// 
     /// Wildcards are allowed in the "target" parameter
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Time(string target = null)
+        public static string Time(string target = null)
         {
             string space = target == null ? "" : " ";
             return $"TIME{space}{target}";

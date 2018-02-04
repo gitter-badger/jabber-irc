@@ -18,14 +18,14 @@ namespace JabberIRC.IRC
     /// ISON is only processed by the server local to the client sending the
     /// command and thus not passed onto other servers for further processing.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Ison(string nickname)
+        public static string Ison(string nickname)
         {
             return $"ISON {nickname}";
         }
 
-        public string Ison(List<string> nicknames)
+        public static string Ison(List<string> nicknames)
         {
             return $"ISON {string.Join(" ", nicknames)}";
         }

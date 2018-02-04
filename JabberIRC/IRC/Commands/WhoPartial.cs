@@ -17,9 +17,9 @@
     /// If the "o" parameter is passed only operators are returned according
     /// to the "mask" supplied.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Who(string mask=null, string oParam=null)
+        public static string Who(string mask=null, string oParam=null)
         {
             string oParamSpace = oParam == null ? "" : " ";
             string maskSpace = mask == null ? "" : " ";

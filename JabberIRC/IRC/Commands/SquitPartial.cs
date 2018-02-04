@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: server comment
@@ -16,9 +14,9 @@ namespace JabberIRC.IRC
     /// generates a WALLOPS message with 'comment' included, so that other
     /// users may be aware of the reason of this action.
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Squit(string server, string comment)
+        public static string Squit(string server, string comment)
         {
             return $"SQUIT {server} :{comment}";
         }

@@ -1,4 +1,4 @@
-﻿namespace JabberIRC.IRC
+﻿namespace JabberIRC.IRC.Commands
 {
     /// <summary>
     /// Parameters: [ target ]
@@ -9,9 +9,9 @@
     /// 
     /// Wildcards are allowed in the "target" parameter
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string Admin(string target=null)
+        public static string Admin(string target=null)
         {
             string space = target == null ? "" : " ";
             return $"ADMIN{space}{target}";

@@ -2,7 +2,7 @@
 
 namespace JabberIRC.IRC
 {
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
         /// <summary>
         /// List visiable users of a channel
@@ -10,12 +10,12 @@ namespace JabberIRC.IRC
         /// <param name="apiWrapper"></param>
         /// <param name="channel"></param>
         /// <param name="writer"></param>
-        public string Names(string channel)
+        public static string Names(string channel)
         {
             return $"NAMES {channel}";
         }
 
-        public string Names(List<string> channels)
+        public static string Names(List<string> channels)
         {
             return $"NAMES {string.Join(",", channels.ToArray())}";
         }

@@ -15,9 +15,9 @@
     /// 
     /// Wildcards are allowed in the "target" parameter
     /// </summary>
-    public partial class ApiWrapper
+    public partial class IrcCommand
     {
-        public string WhoWas(string nickname, int? count=null, string target=null)
+        public static string WhoWas(string nickname, int? count=null, string target=null)
         {
             string countSpace = count == null ? "" : " ";
             string targetSpace = target == null ? "" : " ";
